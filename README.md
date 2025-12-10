@@ -6,6 +6,10 @@ uvicorn main:app --reload
 
 uvicorn main:app --reload --log-level debug
 
+npm run dev
+
+http://localhost:5173
+
 # Wanted functionalities
 
 1. List of all available actors and actresses 
