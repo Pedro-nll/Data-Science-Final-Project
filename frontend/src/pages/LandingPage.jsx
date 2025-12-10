@@ -1,35 +1,23 @@
-import { useEffect, useState } from "react";
-import { fetchActors } from "../api/actors";
+import React from "react";
+import { useActors } from "../hooks/useActors";
+import ActorCard from "../components/ActorCard";
+import "../styles/LandingPage.css";
 
 export default function LandingPage() {
-  const [actors, setActors] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { actors, loading, error } = useActors();
 
-  useEffect(() => {
-    async function loadActors() {
-      try {
-        const data = await fetchActors();
-        setActors(data);
-      } catch (err) {
-        console.error("Failed to load actors:", err);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadActors();
-  }, []);
-
-  if (loading) return <p>Loading actors...</p>;
+  if (loading) return <div className="loading">Loading actors…<br/>it does takes a while, about a minute or so...<br/>sorry :(</div>;
+  if (error) return <div className="error">{error}</div>;
 
   return (
-    <div>
-      <h1>Popular Actors</h1>
-      <ul>
-        {actors.map(actor => (
-          <li key={actor.id}>{actor.name}</li>
+    <div className="landing-container">
+      <h1 className="landing-title">Popular Actors & Actresses</h1>
+
+      <div className="actors-scroll-container">
+        {actors.map((actor) => (
+          <ActorCard key={actor.id} actor={actor} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

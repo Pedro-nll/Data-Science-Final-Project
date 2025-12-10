@@ -1,0 +1,44 @@
+.actor-card {
+  min-width: 220px;
+  max-width: 220px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  scroll-snap-align: start;
+}
+
+.actor-card:hover {
+  transform: translateY(-6px);
+}
+
+.actor-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.actor-info {
+  padding: 12px;
+}
+
+.actor-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.actor-rating {
+  margin: 6px 0 0;
+  color: #ffb400;
+  font-size: 0.95rem;
+}
+
+.actor-genres {
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 0.85rem;
+}
