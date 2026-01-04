@@ -11,7 +11,7 @@ export default function LandingPage() {
 
   return (
     <div className="landing-container">
-      <h1 className="landing-title">Popular Actors & Actresses</h1>
+      <h1 className="landing-title">THE GOATS</h1>
 
       <div className="actors-scroll-container">
         {actors.map((actor) => (
