@@ -1,12 +1,11 @@
-import React from "react";
-import { useActors } from "../hooks/useActors";
+import { useActorsContext } from "../context/ActorsContext";
 import ActorCard from "../components/ActorCard";
 import "../styles/LandingPage.css";
 
 export default function LandingPage() {
-  const { actors, loading, error } = useActors();
+  const { actors, loading, error } = useActorsContext();
 
-  if (loading) return <div className="loading">Loading actors…<br/>it does takes a while, about a minute or so...<br/>sorry :(</div>;
+  if (loading) return <div className="loading">Loading actors…</div>;
   if (error) return <div className="error">{error}</div>;
 
   return (
@@ -14,7 +13,7 @@ export default function LandingPage() {
       <h1 className="landing-title">THE GOATS</h1>
 
       <div className="actors-scroll-container">
-        {actors.map((actor) => (
+        {actors.map(actor => (
           <ActorCard key={actor.id} actor={actor} />
         ))}
       </div>
