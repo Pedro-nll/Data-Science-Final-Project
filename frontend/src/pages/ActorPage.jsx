@@ -57,7 +57,7 @@ export default function ActorPage() {
       <section className="actor-movies">
         <h2>Movies</h2>
 
-        <div className="movies-grid">
+        <div className="movies-scroll">
           {actor.movies.map((movie, idx) => (
             <div key={idx} className="movie-card">
               <img
@@ -67,16 +67,14 @@ export default function ActorPage() {
 
               <div className="movie-info">
                 <h3>{movie.title}</h3>
-                <p>{movie.year}</p>
-                <p>⭐ {movie.rating.toFixed(1)}</p>
-                <p className="movie-genres">
-                  {movie.genres.join(", ")}
-                </p>
+                <p className="movie-year">{movie.year}</p>
+                <p className="movie-rating">⭐ {movie.rating.toFixed(1)}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
+
 
       {/* AWARDS */}
       <section className="actor-awards">
