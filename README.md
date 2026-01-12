@@ -47,6 +47,12 @@ This project serves as a practical application of the **full data pipeline**, fr
 
 ---
 
+## Requirements
+
+- Python 3.10 or newer
+- Node.js 21.7+
+- npm 9+
+
 ## How to Run the Project
 
 ### 1. Clone the Repository
@@ -72,7 +78,10 @@ The backend will be available at:
 
 ### 3. Setup frontend
 
-Open a new terminal on the root of the project.
+Open a new terminal on the root of the project. This assumes you have npm installed.
+
+If npm is not installed, install Node.js from:
+https://nodejs.org/
 
 ```bash
 cd frontend
